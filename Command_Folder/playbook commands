@@ -1,0 +1,5 @@
+ NB: Always remember to set your config and inventory file
+
+1. ansible-playbook --ask-become-pass Test.yml
+    To Run Playbook we using the 'ansible-playbook' command
+
