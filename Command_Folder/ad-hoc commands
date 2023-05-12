@@ -1,1 +1,25 @@
-ansible all --key-file ~/.ssh/ansible -i inventory -m ping
+1. ansible all --key-file ~/.ssh/ansible -i inventory -m ping
+NB: After Creating the inventory file I shortend the command above to
+    ansible all -m ping
+
+2. ansible all -m list-hosts
+    This command lists all the host in the inventory file
+
+3. ansible all -m gather_facts
+    This commands command show details about all the hosts
+    NB: You can limit the command to get info about a single host by
+    -- ansible all -m gather_facts --limit "IP-ADDRESS OF THE HOST"
+
+Elevated Ad-Hoc Commands
+
+1. ansible all -m apt -a update_cache=true --become --ask-become-pass
+    To run ansible with sudo privellages we use --become --ask-become-pass
+
+2. ansible all -m apt -a name=vim-nox --become --ask-become-pass
+    To install a package "vim-nox"
+
+3. ansible all -m apt -a "name=snapd state=latest" --become --ask-become-pass
+    To ensure the package being installed is latest
+
+4. ansible all -m apt -a "upgrade=dist" --become --ask-become-pass
+    will update all
