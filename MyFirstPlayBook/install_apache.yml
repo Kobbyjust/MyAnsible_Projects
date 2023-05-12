@@ -1,0 +1,12 @@
+---
+
+- hosts: all
+  become: true
+  tasks:
+
+  -
+
+  - name: Install The Apache 2 Package
+    apt:
+      name: apache2
+
