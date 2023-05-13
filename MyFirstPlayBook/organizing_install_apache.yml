@@ -9,11 +9,13 @@
       update_cache: yes
     
 
-  - name: Install The Apache 2 Package
+  - name: Install The Apache2 Package, libapache2-mod-php and update the cache
     apt:
       name: a
         - apache2
         - libapache2-mod-php
       state: latest
+      update_cache: yes
+
     when: ansible_distribution = "Ubuntu"
 
