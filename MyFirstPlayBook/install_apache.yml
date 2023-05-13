@@ -7,14 +7,17 @@
   - name: Update Repository Index
     apt:
       update_cache: yes
+    
 
   - name: Install The Apache 2 Package
     apt:
       name: apache2
       state: latest
+    when: ansible_distribution = "Ubuntu"
 
   - name: Adding PHP Support For Apache
     apt:
       name: libapache2-mod-php
       state: latest
+    when: ansible_distribution = "Ubuntu"
 
