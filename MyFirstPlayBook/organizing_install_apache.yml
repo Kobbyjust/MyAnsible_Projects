@@ -4,10 +4,7 @@
   become: true
   tasks:
 
-  - name: Update Repository Index
-    apt:
-      update_cache: yes
-    
+##    
 
   - name: Install The Apache2 Package, libapache2-mod-php and update the cache
     apt:
@@ -18,4 +15,14 @@
       update_cache: yes
 
     when: ansible_distribution = "Ubuntu"
+
+## Can Set up variables and store them in the inventory
+# Using the "package" module helps run the package manage for the various distro
+  # - name: Install The Apache2 Package, libapache2-mod-php and update the cache
+  #   package:
+  #     name: a
+  #       - "{{apache_package}}"
+  #       - "{{php_package}}"
+  #     state: latest
+  #     update_cache: yes
 
