@@ -6,7 +6,7 @@
 
 ##    
 
-  - name: Install The Apache2 Package, libapache2-mod-php and update the cache
+  - name: Install The Apache2 Package,libapache2-mod-php and update the cache
     apt:
       name: a
         - apache2
